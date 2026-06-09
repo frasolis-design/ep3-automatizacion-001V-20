@@ -1,0 +1,17 @@
+alumno:
+  codigo: "001V-20"
+  nombre: "Solis Garrido Francisco Amaro"
+cliente:
+  empresa: "Servicios Remotos Ltda"
+  hostname: "RTR-SERREM"
+router:
+  ip: "192.168.56.101"
+  usuario: "cisco"
+  password: "cisco123!"
+  loopback_id: 10
+  loopback_ip: "10.1.20.1"
+  loopback_mask: "255.255.255.0"
+  loopback_prefix: "24"
+  descripcion_wan: "Enlace-WAN-San-Antonio"
+  banner: "ACCESO RESTRINGIDO - SERREM"
+  ntp_server: "208.67.222.222"
