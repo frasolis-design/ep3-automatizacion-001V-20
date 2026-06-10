@@ -1,0 +1,52 @@
+---
+- name: Aprovisionamiento de Router Corporativo
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - ../vars/vars_001V-20.yaml
+
+  tasks:
+    - name: 1. Respaldar la configuracion actual
+      ios_command:
+        commands: show running-config
+      register: backup_output
+
+    - name: 1.1 Guardar respaldo en archivo
+      copy:
+        content: "{{ backup_output.stdout[0] }}"
+        dest: "respaldo/backup_{{ alumno.codigo }}.cfg"
+
+    - name: 2. Habilitar NETCONF, RESTCONF y HTTP Seguro
+      ios_config:
+        lines:
+          - netconf-yang
+          - restconf
+          - ip http secure-server
+
+    - name: 3. Configurar hostname corporativo
+      ios_config:
+        lines:
+          - hostname {{ cliente.hostname }}
+
+    - name: 4. Configurar banner de acceso
+      ios_banner:
+        banner: motd
+        text: "{{ router.banner }}"
+        state: present
+
+    - name: 5. Configurar servidor NTP
+      ios_config:
+        lines:
+          - ntp server {{ router.ntp_server }}
+
+    - name: 6. Configurar descripcion de interfaz WAN
+      ios_config:
+        parents: interface GigabitEthernet1
+        lines:
+          - description {{ router.descripcion_wan }}
+
+    - name: 7. Crear interfaz Loopback de gestion
+      ios_config:
+        parents: interface Loopback{{ router.loopback_id }}
+        lines:
+          - ip address {{ router.loopback_ip }} {{ router.loopback_mask }}
