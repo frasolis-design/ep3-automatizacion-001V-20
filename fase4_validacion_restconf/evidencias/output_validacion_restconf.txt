@@ -1,0 +1,14 @@
+=== REPORTE DE VALIDACION RESTCONF ===
+Script: validacion_restconf.py
+Fecha: 2026-06-10 00:36:51.440646
+Host VM: labvm
+======================================
+
+- Hostname corporativo: Esperado 'RTR-SERREM' | Obtenido 'RTR-SERREM' -> [OK]
+- IP Loopback de gestion: Esperado '10.1.20.1' | Obtenido '10.1.20.1' -> [OK]
+- Descripcion WAN: Esperado 'Enlace-WAN-San-Antonio' | Obtenido 'Enlace-WAN-San-Antonio' -> [OK]
+- Servidor NTP: Esperado '208.67.222.222' | Obtenido '208.67.222.222' -> [OK]
+
+-------------------------------------
+RESULTADO GLOBAL: CONFORME (4/4)
+-------------------------------------
