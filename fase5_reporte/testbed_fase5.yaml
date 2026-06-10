@@ -1,0 +1,18 @@
+devices:
+  CSR1kv:
+    hostname: RTR-SERREM
+    os: iosxe
+    type: router
+    credentials:
+      default:
+        username: cisco
+        password: "cisco123!"
+    connections:
+      cli:
+        protocol: ssh
+        ssh_options: "-o KexAlgorithms=diffie-hellman-group14-sha1"
+        ip: 192.168.56.101
+        port: 22
+        settings:
+          learn_hostname: true
+          prompt_recovery: true
