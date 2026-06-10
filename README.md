@@ -26,7 +26,7 @@ El laboratorio se dividió en 5 fases críticas de automatización:
 * **Control de Versiones:** Git / GitHub
 
 ## Autor
-**Francisco** - Estudiante de Ingeniería en Conectividad y Redes - Duoc UC.
+**Francisco Solis Garrido** - Estudiante de Ingeniería en Conectividad y Redes - Duoc UC.
 
 ---
 *Este proyecto demuestra la capacidad de gestionar el ciclo de vida de un dispositivo de red mediante código (Infrastructure as Code).*
